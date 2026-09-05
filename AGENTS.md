@@ -17,6 +17,9 @@ Edit files in `docs/` directly. Changes are served immediately by nginx (no rebu
 - `baitcaster.html`, `baithooks.html`, `deep-six.html`, `driftworm.html`, `spinning-combo.html` — Product pages
 - `new-to-fishing.html` — Guide page
 
+## Hero video (home page)
+The hero on `index.html` supports a looping background video. Drop a file at `docs/assets/hero.mp4` and it plays automatically (muted, looped, covering the hero, above the background photo, below the overlay box). Without the file, the hero falls back to the existing photo. The element and wiring were added by `scripts/add-hero-video.py` (idempotent — safe to re-run). Note: the page framework re-renders the `<video>` and drops its inline style, so positioning/playback is applied from the wiring code inside `componentDidMount()` (marked `ketto-hero-video:start/end` in the template's script).
+
 ## External dependencies
 Pages load React/ReactDOM from `unpkg.com` CDN at runtime. No secrets or API keys required.
 
